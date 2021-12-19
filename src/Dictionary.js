@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Results from "./Results";
+import "./Dictionary.css";
 import axios from "axios";
 import "./Dictionary.css";
 
@@ -22,17 +23,33 @@ export default function Dictionary() {
     setSearchWord(event.target.value);
   }
 
-  return (
-    <div className="Dictionary">
-      <form onSubmit={search}>
-        <input
-          type="search"
-          onChange={handleSearch}
-          placeholder="Search for a word..."
-        />
-        <input type="submit" value="Search" />
-      </form>
-      <Results results={results} />
-    </div>
-  );
+  if (results === null) {
+    return (
+      <div className="Dictionary">
+        <div className="dictionary">What word do you want to look up?</div>
+        <form onSubmit={search}>
+          <input
+            type="search"
+            onChange={handleSearch}
+            placeholder="Search for a word..."
+          />
+        </form>
+        <Results results={results} />
+      </div>
+    );
+  } else {
+    return (
+      <div className="Dictionary">
+        <div className="dictionary">Dictionary</div>
+        <form onSubmit={search}>
+          <input
+            type="search"
+            onChange={handleSearch}
+            placeholder="Search for a word..."
+          />
+        </form>
+        <Results results={results} />
+      </div>
+    );
+  }
 }
