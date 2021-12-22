@@ -10,7 +10,11 @@ export default function Synonyms(props) {
         {props.synonyms.map((synonym, index) => {
           if (index < 10) {
             return (
-              <button type="button" class="btn btn-dark" key={index}>
+              <button
+                type="button"
+                class="btn btn-light btn btn-outline-dark"
+                key={index}
+              >
                 {synonym}
               </button>
             );
