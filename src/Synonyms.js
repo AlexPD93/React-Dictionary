@@ -9,7 +9,11 @@ export default function Synonyms(props) {
         <h4>Synonyms:</h4>
         {props.synonyms.map((synonym, index) => {
           if (index < 10) {
-            return <span key={index}> {synonym} </span>;
+            return (
+              <button type="button" class="btn btn-dark" key={index}>
+                {synonym}
+              </button>
+            );
           } else {
             return null;
           }
