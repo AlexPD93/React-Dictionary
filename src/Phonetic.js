@@ -8,11 +8,10 @@ export default function Phonetic(props) {
     phoneticAudio.play();
   }
 
-  console.log(props.phonetic.text);
   return (
     <div className="Phonetic">
-      <i class="fas fa-volume-up" onClick={play}></i>
-      <span>{props.phonetic.text}</span>
+      <i className="fas fa-volume-up audio-icon" onClick={play}></i>
+      <span className="phonetic-text">{props.phonetic.text}</span>
     </div>
   );
 }

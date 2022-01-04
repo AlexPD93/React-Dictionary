@@ -32,6 +32,9 @@ export default function Dictionary() {
             onChange={handleSearch}
             placeholder="Search for a word..."
           />
+          <span>
+            <i onClick={search} className="fas fa-search search-icon"></i>
+          </span>
         </form>
         <Results results={results} />
       </div>
@@ -46,6 +49,9 @@ export default function Dictionary() {
             onChange={handleSearch}
             placeholder="Search for a word..."
           />
+          <span>
+            <i onClick={search} className="fas fa-search search-icon"></i>
+          </span>
         </form>
         <Results results={results} />
       </div>

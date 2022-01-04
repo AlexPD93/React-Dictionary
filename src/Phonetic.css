@@ -1,14 +1,14 @@
-i {
+.audio-icon {
   font-size: 2em;
   margin-right: 0.5em;
   border-radius: 50%;
   border: black 2px solid;
   padding: 0.3em;
 }
-i:hover {
+.audio-icon:hover {
   background: #b3b1b1;
   cursor: pointer;
 }
-span {
+.phonetic-text {
   font-size: 2em;
 }
