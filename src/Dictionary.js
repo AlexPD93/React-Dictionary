@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import Results from "./Results";
 import "./Dictionary.css";
 import axios from "axios";
-import "./Dictionary.css";
 
 export default function Dictionary() {
   const [searchWord, setSearchWord] = useState("");
@@ -26,7 +25,7 @@ export default function Dictionary() {
   if (results === null) {
     return (
       <div className="Dictionary">
-        <div className="dictionary">What word do you want to look up?</div>
+        <h2 className="dictionary">What word do you want to look up?</h2>
         <form onSubmit={search}>
           <input
             type="search"
@@ -40,7 +39,7 @@ export default function Dictionary() {
   } else {
     return (
       <div className="Dictionary">
-        <div className="dictionary">Dictionary</div>
+        <h2 className="dictionary">Dictionary</h2>
         <form onSubmit={search}>
           <input
             type="search"
