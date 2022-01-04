@@ -1,9 +1,7 @@
-footer {
-  position: absolute;
-  bottom: 1em;
+.footer {
   font-weight: 600;
+  opacity: 0.8;
 }
-
 a {
   text-decoration: none;
 }

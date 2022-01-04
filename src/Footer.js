@@ -4,7 +4,7 @@ import "./Footer.css";
 export default function Footer() {
   return (
     <div className="Footer">
-      <footer className="footer">
+      <footer className="text-center footer">
         Coded by Alex Perez-Davies. Code on{" "}
         <a target="/" href="https://github.com/AlexPD93/React-Weather-App">
           Github.

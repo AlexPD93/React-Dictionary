@@ -39,9 +39,9 @@ export default function Dictionary() {
               <i onClick={search} className="fas fa-search search-icon"></i>
             </span>
           </form>
+          <Results results={results} />
+          <Footer />
         </section>
-        <Results results={results} />
-        <Footer />
       </div>
     );
   } else {
