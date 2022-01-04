@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import Results from "./Results";
+import Footer from "./Footer";
+import FooterSearch from "./FooterSearch";
 import "./Dictionary.css";
 import axios from "axios";
 
@@ -37,6 +39,7 @@ export default function Dictionary() {
           </span>
         </form>
         <Results results={results} />
+        <Footer />
       </div>
     );
   } else {
@@ -54,6 +57,7 @@ export default function Dictionary() {
           </span>
         </form>
         <Results results={results} />
+        <FooterSearch />
       </div>
     );
   }
