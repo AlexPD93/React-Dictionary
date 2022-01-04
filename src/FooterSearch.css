@@ -1,4 +1,10 @@
 .footer-search {
   position: relative;
+  padding-top: 2em;
   bottom: 0.5em;
+  font-weight: 600;
+}
+
+a {
+  text-decoration: none;
 }

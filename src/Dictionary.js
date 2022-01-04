@@ -27,17 +27,19 @@ export default function Dictionary() {
   if (results === null) {
     return (
       <div className="Dictionary">
-        <h2 className="dictionary">What word do you want to look up?</h2>
-        <form onSubmit={search}>
-          <input
-            type="search"
-            onChange={handleSearch}
-            placeholder="Search for a word..."
-          />
-          <span>
-            <i onClick={search} className="fas fa-search search-icon"></i>
-          </span>
-        </form>
+        <section>
+          <h2 className="dictionary">What word do you want to look up?</h2>
+          <form onSubmit={search}>
+            <input
+              type="search"
+              onChange={handleSearch}
+              placeholder="Search for a word..."
+            />
+            <span>
+              <i onClick={search} className="fas fa-search search-icon"></i>
+            </span>
+          </form>
+        </section>
         <Results results={results} />
         <Footer />
       </div>
@@ -45,17 +47,19 @@ export default function Dictionary() {
   } else {
     return (
       <div className="Dictionary">
-        <h2 className="dictionary">Dictionary</h2>
-        <form onSubmit={search}>
-          <input
-            type="search"
-            onChange={handleSearch}
-            placeholder="Search for a word..."
-          />
-          <span>
-            <i onClick={search} className="fas fa-search search-icon"></i>
-          </span>
-        </form>
+        <section>
+          <h2 className="dictionary">Dictionary</h2>
+          <form onSubmit={search}>
+            <input
+              type="search"
+              onChange={handleSearch}
+              placeholder="Search for a word..."
+            />
+            <span>
+              <i onClick={search} className="fas fa-search search-icon"></i>
+            </span>
+          </form>
+        </section>
         <Results results={results} />
         <FooterSearch />
       </div>

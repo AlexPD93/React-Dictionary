@@ -1,13 +1,28 @@
 .Meaning {
   margin-bottom: 1em;
 }
+
+.Meaning section {
+  text-align: center;
+}
+
 h2 {
   margin-bottom: -0.7em;
   margin-top: 0em;
 }
 
-p {
+.definition {
   margin-top: 1.2em;
-  max-width: 36.2em;
   margin-bottom: -1.5em;
+  font-weight: 600;
+  text-align: center;
+}
+
+.example {
+  margin-top: 1.6em;
+  margin-bottom: -1.3em;
+  color: #a0a0a0;
+  font-style: italic;
+  font-weight: 500;
+  text-align: center;
 }

@@ -1,5 +1,6 @@
 .Synonyms {
   max-width: 35em;
+  margin: 0 auto;
 }
 h4 {
   margin-top: 0.5em;
@@ -10,4 +11,5 @@ button {
   margin-right: 0.3em;
   margin-top: 0.5em;
   border-color: black;
+  text-align: center;
 }
