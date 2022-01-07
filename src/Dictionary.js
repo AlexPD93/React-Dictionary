@@ -8,16 +8,26 @@ import axios from "axios";
 export default function Dictionary() {
   const [searchWord, setSearchWord] = useState("");
   const [results, setResults] = useState(null);
+  const [photos, setPhotos] = useState(null);
 
   function search(event) {
     event.preventDefault();
     let word = searchWord;
     let url = `https://api.dictionaryapi.dev/api/v2/entries/en/${word}`;
-    axios.get(url).then(handleResponse);
+    axios.get(url).then(handleDictionaryResponse);
+
+    let pexelApiKey = `563492ad6f91700001000001386294a44b924f919e117f0a2ced6dda`;
+    let pexelsApiUrl = `https://api.pexels.com/v1/search?query=${word}&per_page=6`;
+    const headers = { authorization: `Bearer ${pexelApiKey}` };
+    axios.get(pexelsApiUrl, { headers: headers }).then(handlePexelsResponse);
   }
 
-  function handleResponse(response) {
+  function handleDictionaryResponse(response) {
     setResults(response.data);
+  }
+
+  function handlePexelsResponse(response) {
+    setPhotos(response.data.photos);
   }
 
   function handleSearch(event) {
@@ -60,7 +70,7 @@ export default function Dictionary() {
             </span>
           </form>
         </section>
-        <Results results={results} />
+        <Results photos={photos} results={results} />
         <FooterSearch />
       </div>
     );
