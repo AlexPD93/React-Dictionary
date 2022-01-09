@@ -2,6 +2,9 @@ import React from "react";
 import "./Synonyms.css";
 
 export default function Synonyms(props) {
+  function searchSynonym(event) {
+    let synonym = event.target.innerHTML;
+  }
   if (props.synonyms.length > 0) {
     return (
       <div className="Synonyms">
@@ -13,6 +16,7 @@ export default function Synonyms(props) {
                 type="button"
                 class="btn btn-light btn btn-outline-dark"
                 key={index}
+                onClick={searchSynonym}
               >
                 {synonym}
               </button>
