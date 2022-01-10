@@ -1,17 +1,34 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Results from "./Results";
 import Footer from "./Footer";
 import FooterSearch from "./FooterSearch";
-import "./Dictionary.css";
 import axios from "axios";
+import "./Dictionary.css";
 
 export default function Dictionary() {
   const [searchWord, setSearchWord] = useState("");
   const [results, setResults] = useState(null);
   const [photos, setPhotos] = useState(null);
+  const [synonym, setSynonym] = useState("");
+  const getSynonym = (value) => {
+    setSynonym(value);
+  };
+
+  useEffect(() => {
+    setSynonym(synonym);
+    let synonymSearchWord = synonym;
+    let url = `https://api.dictionaryapi.dev/api/v2/entries/en/${synonymSearchWord}`;
+    axios.get(url).then(handleDictionaryResponse);
+
+    let pexelApiKey = `563492ad6f91700001000001386294a44b924f919e117f0a2ced6dda`;
+    let pexelsApiUrl = `https://api.pexels.com/v1/search?query=${synonymSearchWord}&per_page=6`;
+    const headers = { authorization: `Bearer ${pexelApiKey}` };
+    axios.get(pexelsApiUrl, { headers: headers }).then(handlePexelsResponse);
+  }, [synonym]);
 
   function search(event) {
     event.preventDefault();
+
     let word = searchWord;
     let url = `https://api.dictionaryapi.dev/api/v2/entries/en/${word}`;
     axios.get(url).then(handleDictionaryResponse);
@@ -70,7 +87,7 @@ export default function Dictionary() {
             </span>
           </form>
         </section>
-        <Results photos={photos} results={results} />
+        <Results photos={photos} results={results} getSynonym={getSynonym} />
         <FooterSearch />
       </div>
     );

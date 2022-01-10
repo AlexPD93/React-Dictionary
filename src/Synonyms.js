@@ -3,8 +3,10 @@ import "./Synonyms.css";
 
 export default function Synonyms(props) {
   function searchSynonym(event) {
-    let synonym = event.target.innerHTML;
+    let newSynonym = event.target.innerHTML;
+    props.getSynonym(newSynonym);
   }
+
   if (props.synonyms.length > 0) {
     return (
       <div className="Synonyms">
